@@ -3,34 +3,36 @@
   <nav id="navbar" class="navbar navbar-light navbar-expand-sm {% if site.navbar_fixed %}fixed-top{% else %}sticky-top{% endif %}">
     <div class="container">
       {% if page.permalink != '/' -%}
-      <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
-        {%- if site.title == "blank" -%}
-          {%- if site.first_name -%}
-            <span class="font-weight-bold">{{- site.first_name -}}</span> {{- site.middle_name -}} {{- site.last_name -}}
+        <a class="navbar-brand title font-weight-lighter" href="{{ site.baseurl }}/">
+          {%- if site.title == 'blank' -%}
+            {%- if site.first_name -%}
+              <span class="font-weight-bold">{{- site.first_name -}}</span>
+              {{- site.middle_name -}}
+              {{- site.last_name -}}
+            {%- else -%}
+              {{- site.title -}}
+            {%- endif -%}
           {%- else -%}
             {{- site.title -}}
           {%- endif -%}
-        {%- else -%}
-          {{- site.title -}}
-        {%- endif -%}
-      </a>
+        </a>
       {%- elsif site.enable_navbar_social -%}
-      <!-- 社交链接 -->
-      <div class="navbar-brand social">
-        {% include social.liquid %}
-      </div>
+        <!-- 社交链接 -->
+        <div class="navbar-brand social">
+          {% include social.liquid %}
+        </div>
       {% endif %}
-      
+
       <!-- 保留导航栏结构但只显示明暗主题切换按钮 -->
       <div class="ml-auto">
         {%- if site.enable_darkmode %}
-        <ul class="navbar-nav flex-row">
-          <li class="nav-item">
-            <a id="theme-toggle" class="nav-link toggle-dark-mode" href="javascript:toggleDarkMode()">
-              <i class="fas fa-moon"></i>
-            </a>
-          </li>
-        </ul>
+          <ul class="navbar-nav flex-row">
+            <li class="nav-item">
+              <a id="theme-toggle" class="nav-link toggle-dark-mode" href="javascript:toggleDarkMode()">
+                <i class="fas fa-moon"></i>
+              </a>
+            </li>
+          </ul>
         {%- endif %}
       </div>
     </div>
