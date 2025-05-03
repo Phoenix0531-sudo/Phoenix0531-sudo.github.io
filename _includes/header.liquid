@@ -23,17 +23,9 @@
         </div>
       {% endif %}
 
-      <!-- 保留导航栏结构但只显示明暗主题切换按钮 -->
+      <!-- 完全清空导航栏右侧内容 -->
       <div class="ml-auto">
-        {%- if site.enable_darkmode %}
-          <ul class="navbar-nav flex-row">
-            <li class="nav-item">
-              <a id="theme-toggle" class="nav-link toggle-dark-mode" href="javascript:toggleDarkMode()">
-                <i class="fas fa-moon"></i>
-              </a>
-            </li>
-          </ul>
-        {%- endif %}
+        <!-- 所有按钮已移除 -->
       </div>
     </div>
   </nav>
